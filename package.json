@@ -1,0 +1,49 @@
+{
+	"name": "social-network-admin-lab",
+	"version": "1.0.0",
+	"description": "LAB: Social Network Administration",
+	"main": "src/server.js",
+	"type": "module",
+	"scripts": {
+		"server": "node src/server",
+		"dev": "nodemon src/server",
+		"sass": "gulp sasswatch",
+		"build": "webpack && gulp",
+		"gulp-server": "node build-gulp/server.cjs",
+		"webpack-server": "node dist/server.cjs"
+	},
+	"author": "hoshiyama",
+	"license": "ISC",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"cookie-parser": "^1.4.6",
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2",
+		"jquery": "^3.6.1",
+		"jsonwebtoken": "^8.5.1",
+		"pug": "^3.0.2"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.19.6",
+		"@babel/preset-env": "^7.19.4",
+		"babel-loader": "^8.2.5",
+		"css-loader": "^6.7.1",
+		"file-loader": "^6.2.0",
+		"gulp": "^4.0.2",
+		"gulp-babel": "^8.0.0",
+		"gulp-cli": "^2.3.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-rollup": "^2.17.0",
+		"gulp-sass": "^5.1.0",
+		"gulp-uglify": "^3.0.2",
+		"mini-css-extract-plugin": "^2.6.1",
+		"nodemon": "^2.0.20",
+		"sass": "^1.55.0",
+		"sass-loader": "^13.1.0",
+		"string-replace-loader": "^3.1.0",
+		"terser-webpack-plugin": "^5.3.6",
+		"webpack": "^5.74.0",
+		"webpack-cli": "^4.10.0",
+		"webpack-node-externals": "^3.0.0"
+	}
+}

@@ -1,0 +1,159 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "johndoe@gmail.com",
+    "date": "1994-12-21",
+    "role": "admin",
+    "status": "active",
+    "friends": [
+      3,
+      5,
+      6,
+      10,
+      11
+    ]
+  },
+  {
+    "id": 2,
+    "name": "John Doe 1",
+    "email": "a@gmail.com",
+    "date": "1991-01-01",
+    "role": "user",
+    "status": "active",
+    "friends": [
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "id": 3,
+    "name": "John Doe 2",
+    "email": "a@gmail.com",
+    "date": "1991-01-01",
+    "role": "moderator",
+    "status": "active",
+    "friends": [
+      1,
+      2,
+      4,
+      6
+    ]
+  },
+  {
+    "id": 4,
+    "name": "John Doe 3",
+    "email": "a@gmail.com",
+    "date": "1991-01-01",
+    "role": "moderator",
+    "status": "active",
+    "friends": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 5,
+    "name": "John Doe 4",
+    "email": "a@gmail.com",
+    "date": "1991-01-01",
+    "role": "moderator",
+    "status": "active",
+    "friends": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 6,
+    "name": "John Doe 5",
+    "email": "a@gmail.com",
+    "date": "1991-01-01",
+    "role": "moderator",
+    "status": "active",
+    "friends": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 7,
+    "name": "John Doe 6",
+    "email": "a@gmail.com",
+    "date": "1991-01-01",
+    "role": "moderator",
+    "status": "active",
+    "friends": [
+      1
+    ]
+  },
+  {
+    "id": 8,
+    "name": "John Doe 7",
+    "email": "a@gmail.com",
+    "date": "1991-01-01",
+    "role": "moderator",
+    "status": "active",
+    "friends": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 9,
+    "name": "John Doe 8",
+    "email": "a@gmail.com",
+    "date": "1991-01-01",
+    "role": "moderator",
+    "status": "active",
+    "friends": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 10,
+    "name": "John Doe 9",
+    "email": "a@gmail.com",
+    "date": "1991-01-01",
+    "role": "moderator",
+    "status": "active",
+    "friends": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 11,
+    "name": "John Doe 10",
+    "email": "a@gmail.com",
+    "date": "1991-01-01",
+    "role": "moderator",
+    "status": "active",
+    "friends": [
+      10,
+      12,
+      3
+    ]
+  },
+  {
+    "id": 12,
+    "name": "John Doe 11",
+    "email": "a@gmail.com",
+    "date": "1991-01-01",
+    "role": "moderator",
+    "status": "active",
+    "friends": [
+      11,
+      2,
+      3
+    ]
+  }
+]

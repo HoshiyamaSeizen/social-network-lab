@@ -1,0 +1,57 @@
+.ui-widget-overlay
+    background-color: $color-main-dim
+    backdrop-filter: blur(4px)
+
+.ui-dialog
+    border: 4px solid $color-main-dark !important
+    border-radius: 4px
+
+.ui-dialog-titlebar
+    background-color: transparent
+    border: none
+
+.ui-dialog-title
+    color: $color-main-dark
+    font-size: 1.5rem
+
+.ui-dialog-titlebar-close
+    border: none
+    background-color: transparent
+    &:focus
+        background-color: transparent
+    &:active
+        background-color: $color-main-dark
+
+#dialog
+    form
+        p, section
+            margin-top: 10px
+        #delete-btn
+            margin-left: 6px
+            background: darkred
+            &:hover
+                background: red
+        button
+            margin-top: 20px
+            i
+                margin-left: 6px
+    .block-btn
+        display: block
+        margin: 0 auto 10px
+        width: 110px
+        i
+            margin-left: 8px
+            &::before
+                transition: 1s ease-in
+        &[active]
+            background-color: darkgreen
+        &[active='false']
+            background-color: darkred
+    .image
+        max-width: 90%
+        max-height: 80vh
+        overflow: auto
+        margin: auto
+        img
+            display: block
+            margin: auto

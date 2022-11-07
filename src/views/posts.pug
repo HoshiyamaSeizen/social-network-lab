@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        script(src="https://code.jquery.com/jquery-3.6.1.js")
+        script(src="https://code.jquery.com/ui/1.13.2/jquery-ui.js")
+        script(src="/public/scripts/script.js")
+        script(src="https://kit.fontawesome.com/ac0925c6df.js" crossorigin="anonymous") 
+        link(rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css")
+        link(rel="stylesheet", href="/public/style.css")
+        title Posts
+    body 
+        .window
+            if curr !== null 
+                p.main-user= curr
+                a.back(href="/users")
+                    i.fa-solid.fa-arrow-left
+            h1 News
+            .posts-container.window-content
+                each post in posts
+                    .post-container.contetnt-block 
+                        p.name= post.author
+                        p.date= post.date
+                        p.content= post.content
+                        if post.active
+                            button.block-btn.post-block(active = 'true', post_id=post.id)
+                                span.status Active
+                                i.fa-solid.fa-unlock 
+                        else
+                            button.block-btn.post-block(active = 'false', post_id=post.id)
+                                span.status Blocked
+                                i.fa-solid.fa-lock
+

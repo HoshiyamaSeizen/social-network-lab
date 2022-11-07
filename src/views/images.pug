@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        script(src="https://code.jquery.com/jquery-3.6.1.js")
+        script(src="https://code.jquery.com/ui/1.13.2/jquery-ui.js")
+        script(src="/public/scripts/script.js")
+        script(src="https://kit.fontawesome.com/ac0925c6df.js" crossorigin="anonymous") 
+        link(rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css")
+        link(rel="stylesheet", href="/public/style.css")
+        title Images
+    body 
+        .window
+            if curr !== null 
+                p.main-user= curr
+                a.back(href="/users")
+                    i.fa-solid.fa-arrow-left
+            h1 Images
+            .image-container.window-content
+                each image in images 
+                    img(active = image.active.toString(), image_id=image.id, src=image.src)
+        #dialog
+            button.block-btn.image-block
+                span.status
+                i.fa-solid.fa-unlock
+            .image
+                img

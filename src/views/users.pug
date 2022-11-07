@@ -1,0 +1,70 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        script(src="https://code.jquery.com/jquery-3.6.1.js")
+        script(src="https://code.jquery.com/ui/1.13.2/jquery-ui.js")
+        script(src="/public/scripts/script.js")
+        script(src="https://kit.fontawesome.com/ac0925c6df.js" crossorigin="anonymous") 
+        link(rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css")
+        link(rel="stylesheet", href="/public/style.css")
+        title Users
+    body 
+        .window 
+            if curr !== null 
+                p.main-user= curr
+                a.back(href="/users")
+                    i.fa-solid.fa-arrow-left
+            h1= title
+            form.search-bar 
+                input(placeholder="Search user...")
+                button#search-btn
+                    i.fa-solid.fa-search
+            #accordion.window-content
+                each user in users
+                    h3.contetnt-block= user.name
+                    section.contetnt-block
+                        .info
+                            p Email: 
+                                span= user.email
+                            p Date of Birth: 
+                                span= user.date
+                            p Role: 
+                                span= user.role
+                            p Status: 
+                                span= user.status
+                        .actions 
+                            a(href='/users/friends/'+user.id) Friends
+                            a(href='#' user_id=user.id class="open-edit-btn") Edit 
+                            a(href='/posts/'+user.id) News
+                            a(href='/images/'+user.id) Photos
+        #dialog(title="User Info")
+            form(action="/users/:id", method="POST") 
+                p User ID: 
+                    span#user_id
+                section
+                    label(for='name') Name
+                    input#name(name='name' type='text' required)
+                section
+                    label(for='email') Email
+                    input#email(name='email' type='email' required)
+                section
+                    label(for='date') Date of birth
+                    input#date(name='date' type='date' required)
+                section
+                    label(for="role") Role
+                    select#role(name="role")
+                        option(value="1") User
+                        option(value="2") Moderator 
+                        option(value="3") Admin
+                section
+                    label(for="status") Status
+                    select#status(name="status")
+                        option(value="1") Active
+                        option(value="2") Blocked        
+                button(type='submit') Edit user
+                    i.fa-solid.fa-pen
+                button#delete-btn(type="button") Delete user
+                    i.fa-solid.fa-trash-can
