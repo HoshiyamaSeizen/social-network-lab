@@ -1,0 +1,57 @@
+<div class="container">
+  <h1>Profile</h1>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <h2>User Info</h2>
+    <p class="error" [hidden]="!err">{{ err }}</p>
+    <p>User ID: {{ id }}</p>
+    <p class="picture-p">Profile picture:</p>
+    <img [src]="image" alt="" width="32" height="32" />
+    <mat-form-field class="form-item">
+      <mat-label for="name">Username</mat-label>
+      <input
+        matInput
+        id="name"
+        name="name"
+        type="text"
+        required="required"
+        [(ngModel)]="form.name"
+      />
+    </mat-form-field>
+    <mat-form-field class="form-item">
+      <mat-label>Date of birth</mat-label>
+      <input
+        matInput
+        name="date"
+        [matDatepicker]="picker"
+        required="required"
+        [(ngModel)]="form.date"
+      />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button
+      class="form-btn edit-btn"
+      type="submit"
+      [disabled]="userForm.form.invalid"
+      mat-flat-button
+    >
+      Edit
+    </button>
+    <button
+      class="form-btn delete-btn"
+      mat-flat-button
+      (click)="deleteAcc($event)"
+    >
+      Delete account
+    </button>
+  </form>
+  <div class="admin" *ngIf="isAdmin">
+    <hr />
+    <h2>Admin mode</h2>
+    <button (click)="goAdmin()" mat-flat-button>Go admin mode</button>
+  </div>
+  <button class="exit-btn" mat-icon-button (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</div>

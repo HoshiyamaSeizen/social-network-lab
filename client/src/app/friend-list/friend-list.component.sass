@@ -1,0 +1,117 @@
+@import '../_vars'
+
+.container
+    padding-top: 20px
+    h1
+        margin-left: 80px
+
+    .mat-form-field, form
+        width: 100%
+
+    .new-friend
+        margin-top: 30px
+        &.hidden
+            display: none
+
+        .error
+            font-size: 0.7rem
+            color: red
+            margin: 0
+
+        .form-btn
+            display: block
+            margin: 20px auto
+            width: 50%
+            text-decoration: none
+            padding: 8px 15px
+            background: $color-main-dark
+            color: white
+            border: none
+            border-radius: 10px
+            transition: 200ms ease-in
+            &:hover
+                background: $color-main
+                scale: 1.05
+            &:active
+                scale: 1
+            &:focus
+                outline: none
+            &[disabled]
+                background: #aaa
+                scale: 1
+
+    .add-btn
+        position: absolute
+        top: 4%
+        right: 9%
+        width: fit-content
+        padding: 0
+        color: $color-main-dark
+        background-color: transparent
+        border: none
+        transition: 200ms ease-in
+        scale: 1
+        z-index: 1000
+        &:hover
+            background-color: transparent
+            color: $color-main
+            scale: 1.2
+        &:active
+            scale: 1
+        &:focus
+            outline: none
+        mat-icon
+            width: 40px
+            height: 40px
+            font-size: 2rem
+
+    .mat-card
+        display: flex
+        align-items: center
+        width: 80%
+        margin: auto
+        margin-bottom: 15px
+        img
+            border-radius: 50%
+            background-color: #ddd
+            position: relative
+            &[alt]::before
+                display: block
+                position: absolute
+                top: -1px
+                left: -1px
+                width: 36px
+                height: 36px
+                background-color: #fff
+                transition: 200ms ease-in
+                content: attr(alt)
+            &[alt]::after
+                display: block
+                position: absolute
+                top: 0
+                left: 0
+                width: 32px
+                height: 32px
+                border-radius: 50%
+                transition: 200ms ease-in
+                background-color: #ddd
+                content: ''
+        p
+            margin: 0
+            margin-left: 12px
+            font-size: 1.2rem
+        .mat-icon
+            margin-left: auto
+            &.is-friend
+                color: darkgreen
+
+        &:not(.new-friend)
+            transition: 200ms ease-in
+            &:hover
+                cursor: pointer
+                scale: 1.01
+                background: #ddd
+                img[alt]::before
+                    background-color: #ddd
+                img[alt]::after
+                    background-color: #aaa

@@ -59,7 +59,23 @@ $(() => {
 		$('#date').attr('value', info[1]);
 		$('#role').val(['user', 'moderator', 'admin'].indexOf(info[2]) + 1);
 		$('#status').val(['active', 'blocked'].indexOf(info[3]) + 1);
-		$('#dialog').children('form').attr('action', `/users/${id}`);
+
+		const form = $('#dialog').children('form');
+		$('#edit-form-btn').on('click', (e) => {
+			e.preventDefault();
+
+			const body = {};
+			form.serializeArray().map((field) => (body[field.name] = field.value));
+			$.ajax({
+				url: `/users/${id}`,
+				type: 'post',
+				contentType: 'application/json; charset=utf-8',
+				data: JSON.stringify(body),
+				success: () => {
+					location.reload();
+				},
+			});
+		});
 	});
 
 	$('.block-btn.post-block').on('click', (e) => {

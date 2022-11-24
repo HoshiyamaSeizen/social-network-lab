@@ -33,21 +33,21 @@ const paths = {
 	},
 };
 
-const jsServer = () => {
-	return src(paths.js.server.src)
-		.pipe(
-			rollup({
-				input: paths.js.server.entry,
-				output: { format: 'cjs' },
-				onwarn: (msg) => {
-					if (!/external dependency/.test(msg)) console.error(msg);
-				},
-			})
-		)
-		.pipe(concat(paths.js.server.name))
-		.pipe(uglify())
-		.pipe(dest(paths.js.server.dest));
-};
+// const jsServer = () => {
+// 	return src(paths.js.server.src)
+// 		.pipe(
+// 			rollup({
+// 				input: paths.js.server.entry,
+// 				output: { format: 'cjs' },
+// 				onwarn: (msg) => {
+// 					if (!/external dependency/.test(msg)) console.error(msg);
+// 				},
+// 			})
+// 		)
+// 		.pipe(concat(paths.js.server.name))
+// 		.pipe(uglify())
+// 		.pipe(dest(paths.js.server.dest));
+// };
 const jsPublic = () => {
 	return src(paths.js.public.src)
 		.pipe(babel({ presets: ['@babel/env'] }))
@@ -75,7 +75,7 @@ const views = () => {
 	return src(paths.pug.src).pipe(dest(paths.pug.dest));
 };
 
-const build = series(cssProd, jsServer, jsPublic, views);
+const build = series(cssProd, /*jsServer,*/ jsPublic, views);
 
 export { cssDev, sasswatch, build };
 export default build;

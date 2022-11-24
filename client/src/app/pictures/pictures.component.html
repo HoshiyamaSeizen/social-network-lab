@@ -1,0 +1,54 @@
+<div class="container">
+  <h1>Images</h1>
+  <button class="add-btn" (click)="openAddPicture()" mat-icon-button>
+    <mat-icon>{{ addPictureHidden ? "add" : "close" }}</mat-icon>
+  </button>
+  <mat-card class="new-image" [class.hidden]="addPictureHidden">
+    <form #userForm="ngForm" (ngSubmit)="addImage()" novalidate>
+      <mat-form-field class="form-item">
+        <mat-label for="content">Image source:</mat-label>
+        <input
+          matInput
+          id="name"
+          name="content"
+          type="url"
+          required="required"
+          [(ngModel)]="imageSrc"
+        />
+      </mat-form-field>
+      <button
+        class="form-btn"
+        type="submit"
+        [disabled]="userForm.form.invalid"
+        mat-flat-button
+      >
+        Add
+      </button>
+    </form>
+  </mat-card>
+  <div class="image-container">
+    <img
+      *ngFor="let image of images"
+      [src]="image.src"
+      alt=""
+      onerror="this.style.display='none'"
+      [class.blocked]="!image.active"
+      (click)="openImageDialog(image.id, image.src, image.active)"
+    />
+  </div>
+</div>
+
+<dialog #dialog>
+  <div class="buttons">
+    <button mat-flat-button class="avatar-btn button" (click)="setProfilePic()">
+      Set as profile picture
+    </button>
+    <button mat-icon-button class="delete-btn button" (click)="deleteImg()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <button class="close-btn" (click)="closeImageDialog()" mat-icon-button>
+    <mat-icon>close</mat-icon>
+  </button>
+  <div class="image"><img [src]="dialogImg" alt="image" /></div>
+</dialog>

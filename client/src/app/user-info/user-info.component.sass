@@ -1,0 +1,105 @@
+@import '../_vars'
+
+.container
+    padding-top: 40px
+    width: 80%
+    margin: auto
+
+.form-item
+    width: 100%
+
+button
+    display: block
+    margin: 20px auto
+    width: 80%
+    text-decoration: none
+    padding: 8px 15px
+    background: $color-main-dark
+    color: white
+    border: none
+    border-radius: 10px
+    transition: 200ms ease-in
+    &:hover
+        background: $color-main
+        scale: 1.05
+    &:active
+        scale: 1
+    &:focus
+        outline: none
+    &[disabled]
+        background: #aaa
+        scale: 1
+
+.form-btn
+    margin-top: 50px
+    width: 40%
+    margin: 20px 0
+
+.edit-btn
+    float: left
+
+.delete-btn
+    float: right
+    background-color: darkred
+    &:hover
+        background-color: red
+
+.exit-btn
+    position: absolute
+    top: 5%
+    right: 9%
+    width: fit-content
+    padding: 8px 8px
+    color: darkred
+    background-color: transparent
+    &:hover
+        background-color: transparent
+        color: red
+    mat-icon
+        width: 40px
+        height: 40px
+        font-size: 2rem
+
+hr
+    display: block
+    width: 100%
+
+.admin
+    margin-top: 90px
+
+.error
+    font-size: 0.7rem
+    color: red
+
+p, h1
+    margin: 0
+
+.picture-p
+    display: inline
+    margin: 5px 10px 15px 0
+    float: left
+
+img
+    border-radius: 50%
+    background-color: #ddd
+    float: left
+    position: relative
+    &[alt]::before
+        display: block
+        position: absolute
+        top: -1px
+        left: -1px
+        width: 34px
+        height: 34px
+        background-color: #fff
+        content: attr(alt)
+    &[alt]::after
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        width: 32px
+        height: 32px
+        border-radius: 50%
+        background-color: #ddd
+        content: ''

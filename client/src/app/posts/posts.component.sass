@@ -1,0 +1,112 @@
+@import '../_vars'
+
+.container
+    padding-top: 20px
+    width: 80%
+    margin: auto
+
+    .mat-form-field
+        width: 100%
+
+    .new-post
+        margin-top: 30px
+        &.hidden
+            display: none
+
+        .form-btn
+            display: block
+            margin: 20px auto
+            width: 50%
+            text-decoration: none
+            padding: 8px 15px
+            background: $color-main-dark
+            color: white
+            border: none
+            border-radius: 10px
+            transition: 200ms ease-in
+            &:hover
+                background: $color-main
+                scale: 1.05
+            &:active
+                scale: 1
+            &:focus
+                outline: none
+            &[disabled]
+                background: #aaa
+                scale: 1
+
+    h1
+        margin-left: 20px
+
+    img
+        margin-top: 2px
+        border-radius: 50%
+        background-color: #ddd
+        float: left
+        position: relative
+        &[alt]::before
+            display: block
+            position: absolute
+            top: -1px
+            left: -1px
+            width: 34px
+            height: 34px
+            background-color: #fff
+            content: attr(alt)
+        &[alt]::after
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            width: 32px
+            height: 32px
+            border-radius: 50%
+            background-color: #ddd
+            content: ''
+
+    .name, .date
+        margin-left: 45px
+
+    .name
+        font-weight: 600
+        font-size: 1.1rem
+        margin-bottom: 2px
+    .date
+        font-size: 0.7rem
+        color: #666
+        margin-bottom: 4px
+    .content
+        margin-top: 10px
+
+    .mat-card
+        margin: 20px 10px 0 0
+        &.blocked
+            border: solid 1px darkred
+            .content
+                color: transparent
+                text-shadow: 0 0 5px rgba(0,0,0,0.6)
+
+    .add-btn
+        position: absolute
+        top: 4%
+        right: 13%
+        width: fit-content
+        padding: 0
+        color: $color-main-dark
+        background-color: transparent
+        border: none
+        transition: 200ms ease-in
+        scale: 1
+        z-index: 1000
+        &:hover
+            background-color: transparent
+            color: $color-main
+            scale: 1.2
+        &:active
+            scale: 1
+        &:focus
+            outline: none
+        mat-icon
+            width: 40px
+            height: 40px
+            font-size: 2rem

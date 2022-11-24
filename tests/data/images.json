@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"ownBy": 1,
+		"active": true,
+		"src": "src1"
+	},
+	{
+		"id": 2,
+		"ownBy": 13,
+		"active": false,
+		"src": "src2"
+	},
+	{
+		"id": 3,
+		"ownBy": 2,
+		"active": true,
+		"src": "src3"
+	}
+]

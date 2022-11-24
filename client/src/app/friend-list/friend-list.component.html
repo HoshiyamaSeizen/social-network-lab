@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Friends</h1>
+  <button class="add-btn" (click)="openAddFriend()" mat-icon-button>
+    <mat-icon>{{ addFriendHidden ? "add" : "close" }}</mat-icon>
+  </button>
+  <mat-card class="new-friend" [class.hidden]="addFriendHidden">
+    <form #userForm="ngForm" (ngSubmit)="addFriend()" novalidate>
+      <p class="error" [hidden]="!err">{{ err }}</p>
+      <mat-form-field class="form-item">
+        <mat-label for="content">User ID:</mat-label>
+        <input
+          matInput
+          id="name"
+          name="content"
+          type="number"
+          required="required"
+          [(ngModel)]="userId"
+        />
+      </mat-form-field>
+      <button
+        class="form-btn"
+        type="submit"
+        [disabled]="userForm.form.invalid"
+        mat-flat-button
+      >
+        Add Friend
+      </button>
+    </form>
+  </mat-card>
+  <mat-card
+    *ngFor="let user of users"
+    class="friend-field"
+    (click)="openChat(user.id)"
+  >
+    <img [src]="user.avatar" alt="" width="32" height="32" />
+    <p>{{ user.name }}</p>
+    <mat-icon [class.is-friend]="user.friend">{{
+      user.friend ? "person" : "person_outline"
+    }}</mat-icon>
+  </mat-card>
+</div>

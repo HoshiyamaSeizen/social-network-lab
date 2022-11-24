@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>News</h1>
+  <button class="add-btn" (click)="openCreatePost()" mat-icon-button>
+    <mat-icon>{{ createPostHidden ? "add" : "close" }}</mat-icon>
+  </button>
+  <mat-card class="new-post" [class.hidden]="createPostHidden">
+    <form #userForm="ngForm" (ngSubmit)="addPost()" novalidate>
+      <mat-form-field class="form-item">
+        <mat-label for="content">Post content:</mat-label>
+        <textarea
+          matInput
+          id="name"
+          name="content"
+          type="text"
+          required="required"
+          [(ngModel)]="postContent"
+        ></textarea>
+      </mat-form-field>
+      <button
+        class="form-btn"
+        type="submit"
+        [disabled]="userForm.form.invalid"
+        mat-flat-button
+      >
+        Post
+      </button>
+    </form>
+  </mat-card>
+  <mat-card *ngFor="let post of posts" [class.blocked]="!post.active">
+    <img [src]="post.avatar" alt="" width="32" height="32" />
+    <p class="name">{{ post.author }}</p>
+    <p class="date">{{ post.date }}</p>
+    <hr />
+    <p class="content">{{ post.content }}</p>
+  </mat-card>
+</div>

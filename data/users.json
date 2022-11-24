@@ -3,29 +3,28 @@
     "id": 1,
     "name": "John Doe",
     "email": "johndoe@gmail.com",
+    "password": "$2a$12$v0HWqP6h2p42SugNcZsHxeevJH6yMyvMAGaXp9xm2E8Sg0ZMQrQl2",
     "date": "1994-12-21",
-    "role": "admin",
+    "role": "user",
     "status": "active",
     "friends": [
       3,
       5,
       6,
       10,
-      11
-    ]
+      11,
+      2,
+      13
+    ],
+    "avatar": 4
   },
   {
     "id": 2,
     "name": "John Doe 1",
-    "email": "a@gmail.com",
-    "date": "1991-01-01",
     "role": "user",
     "status": "active",
-    "friends": [
-      5,
-      6,
-      7
-    ]
+    "avatar": "",
+    "friends": []
   },
   {
     "id": 3,
@@ -39,7 +38,8 @@
       2,
       4,
       6
-    ]
+    ],
+    "avatar": 2
   },
   {
     "id": 4,
@@ -155,5 +155,29 @@
       2,
       3
     ]
+  },
+  {
+    "id": 13,
+    "name": "hoshiyama",
+    "email": "nazarafanasyev@gmail.com",
+    "password": "$2a$12$v0HWqP6h2p42SugNcZsHxeevJH6yMyvMAGaXp9xm2E8Sg0ZMQrQl2",
+    "date": "2022-01-01",
+    "role": "admin",
+    "status": "active",
+    "friends": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "avatar": 6
   }
 ]

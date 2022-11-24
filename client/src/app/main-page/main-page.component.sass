@@ -1,0 +1,26 @@
+@import '../_vars'
+
+.mat-primary
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 60%
+    height: 80%
+    padding: 30px 20px
+    background-color: white
+    border: 5px solid $color-main-dark
+    border-radius: 10px
+
+    ::ng-deep .mat-tab-label
+        border-bottom: 3px solid #888
+
+    ::ng-deep .mat-tab-label-active
+        border-bottom: 3px solid $color-main
+
+    ::ng-deep .mat-tab-label-content
+        color: $color-main-dark
+
+    ::ng-deep .mat-tab-body-wrapper
+        padding: 20px 30px
+        height: 100%

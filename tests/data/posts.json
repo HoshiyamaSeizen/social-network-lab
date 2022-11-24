@@ -1,0 +1,30 @@
+[
+	{
+		"id": 1,
+		"author": 2,
+		"content": "1",
+		"date": "2022-10-25",
+		"active": true
+	},
+	{
+		"id": 2,
+		"author": 2,
+		"content": "2",
+		"date": "2022-10-26",
+		"active": false
+	},
+	{
+		"id": 3,
+		"author": 3,
+		"content": "3",
+		"date": "2022-10-27",
+		"active": true
+	},
+	{
+		"id": 4,
+		"author": 4,
+		"content": "4",
+		"date": "2022-10-28",
+		"active": false
+	}
+]

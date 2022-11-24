@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Sign in</h1>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <p class="error" [hidden]="!err">{{ err }}</p>
+    <mat-form-field class="form-item">
+      <mat-label for="email">Email</mat-label>
+      <input
+        matInput
+        id="email"
+        name="email"
+        type="email"
+        required="required"
+        [(ngModel)]="form.email"
+      />
+    </mat-form-field>
+    <mat-form-field class="form-item">
+      <mat-label for="password">Password</mat-label>
+      <input
+        matInput
+        id="password"
+        name="password"
+        type="password"
+        required="required"
+        [(ngModel)]="form.password"
+      />
+    </mat-form-field>
+    <button
+      type="submit"
+      [disabled]="userForm.form.invalid"
+      mat-flat-button
+      type="submit"
+    >
+      Sign in
+    </button>
+  </form>
+  <p>
+    Don't have an account?
+    <a [routerLink]="['/register']"> Sign up </a>
+  </p>
+</div>
